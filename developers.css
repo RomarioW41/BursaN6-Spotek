@@ -1,0 +1,81 @@
+/*Font*/
+@import url('https://fonts.googleapis.com/css2?family=Carter+One&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+}
+body {
+  font-family: "Carter One", system-ui;
+  font-weight: 400;
+  color: white;
+  font-size: 16px;
+}
+
+/*Styles for img and links*/
+a{
+    text-decoration: none;
+}
+img{
+    max-width: 100%;
+}
+
+/*Mane rulles*/
+.container{
+    width: 1400px;
+    margin: 0 auto;
+}
+
+/*Header*/
+header{
+    padding: 50px 0;
+    background-image: url("images/navbar.jpg");
+    border-radius: 60px;
+}
+header .logo{
+    text-transform: uppercase;
+    font-size: 29px;
+    font-weight: 700;
+    margin-left: 35px;
+}
+header nav{
+    float: right;
+    width: 50%;
+}
+header nav ul{
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    position: relative;
+    z-index: 2;
+}
+header nav ul li{
+    display: inline-block;
+}
+header nav ul li a{
+    color: white;
+}
+/*Header_ Active cursor*/
+header nav ul li.active::after{
+    content: '';
+    display: block;
+    width: 40px;
+    height: 5px;
+    background: rgb(180, 120, 9);
+    border-radius: 10px;
+    position: relative;
+    top: 5px;
+    left: -15px;
+}
+header nav ul li:not(.active):not(.btn) a:hover{
+    border-bottom: 5px solid orange;
+}
+header nav ul li.btn a{
+    background: rgb(206, 120, 7);
+    padding: 9px 17px;
+    border-radius: 10px;
+    transition: all 500ms ease;
+}
+header nav ul li.btn a:hover{
+    background: rgb(204, 147, 41);
+}
+
