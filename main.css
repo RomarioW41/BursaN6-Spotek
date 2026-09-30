@@ -1,106 +1,212 @@
-body{
-    /*background-image: url('images/main_background1.png');
-    background-repeat: repeat;*/
-}
 /*Mobile adaptation*/
-@media (max-width: 768px){
-    .container{
-        flex-direction: column;
-    }
-    .left_panel,
-    .registr_div,
-    .right_panel{
-        width: 70%;
-        margin: 15px 0;
-    }
+
+
+/*Font*/
+@import url('https://fonts.googleapis.com/css2?family=Carter+One&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+}
+body {
+  font-family: "Carter One", system-ui;
+  font-weight: 400;
+  color: white;
+  font-size: 16px;
 }
 
-
-
-/*Navigation bar and its buttons*/
-.navbar{
-    position: fixed;
-    top: 0;
-    left: 0;
-
-    width: 100%;
-    height: 75px;
-    box-sizing: border-box;
-
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    padding: 0 50px;
-
-    background: rgb(232, 216, 216);
-    border-bottom: 1px solid #2b2b2b;
-    z-index: 1000;
-}
-.logo img{
-    height: 42px;
-    width: 42px;
-}
-.nav_links{
-    display: flex;
-    gap: 35px;
-}
-.nav_links a{
-    color: black;
+/*Styles for img and links*/
+a{
     text-decoration: none;
-    font-size: 18px;
-    font-weight: 800;
-    transition: 0.25s;
 }
-.nav_links a:hover{
-    color: rgb(54, 41, 228);
+img{
+    max-width: 100%;
 }
 
-
-.account_button{
-    color: black;
-    text-decoration: underline;
-    font-size: 18px;
-    font-weight: 800;
-    transition: 0.25s;
-}
-.account_button:hover{
-    color: aqua;
-}
-
-
-/*Main contauner*/
+/*Mane rulles*/
 .container{
+    width: 1400px;
+    margin: 0 auto;
+}
+
+
+/*Header*/
+header{
+    padding: 50px 0;
+    background-image: url("images/navbar.jpg");
+    border-radius: 60px;
+}
+header .logo{
+    text-transform: uppercase;
+    font-size: 29px;
+    font-weight: 700;
+    margin-left: 35px;
+}
+header nav{
+    float: right;
+    width: 50%;
+}
+header nav ul{
+    list-style: none;
     display: flex;
     justify-content: space-around;
-    align-items: center;
-    width: 100%;
-    height: 100%;
+    position: relative;
+    z-index: 2;
 }
-.left_panel{
-    width: 350px;
-    height: 740px;
-    background-color: rgb(246, 242, 242);
-    padding: 25px;
-    border-radius: 25px;
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+header nav ul li{
+    display: inline-block;
 }
-.right_panel{
-    width: 350px;
-    height: 740px;
-    background-color: rgb(246, 242, 242);
-    padding: 25px;
-    border-radius: 25px;                                                      
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+header nav ul li a{
+    color: white;
 }
-.central_panel{
-    width: 800px;
-    margin: 80px auto;
-    /*background-color: rgb(219, 190, 147);*/
-    background-color: rgb(246, 242, 242);
-    padding: 30px;
-    border-radius: 25px;
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+/*Header_ Active cursor*/
+header nav ul li.active::after{
+    content: '';
+    display: block;
+    width: 40px;
+    height: 5px;
+    background: rgb(180, 120, 9);
+    border-radius: 10px;
+    position: relative;
+    top: 5px;
+    left: -15px;
+}
+header nav ul li:not(.active):not(.btn) a:hover{
+    border-bottom: 5px solid orange;
+}
+header nav ul li.btn a{
+    background: rgb(206, 120, 7);
+    padding: 9px 17px;
+    border-radius: 10px;
+    transition: all 500ms ease;
+}
+header nav ul li.btn a:hover{
+    background: rgb(204, 147, 41);
 }
 
-    
+/*Div hero*/
+.wraper{
+    background: linear-gradient(180deg, rgba(0, 0, 0, 1) 43%, rgba(84, 51, 1, 1) 100%); 
+    width: 100%;
+}
+.hero{
+    padding-bottom: 100px;
+    position: relative  ;
+}
+.hero-info{
+    width: 530px;
+    padding-top: 70px;
+}
+.hero-info h2{
+    color: rgb(180, 120, 9);
+    font-size: 20px;
+    font-weight: 500;
+}
+.hero-info h1{
+    font-size: 50px;
+    font-weight: 500;
+}
+.hero-info p{
+    font-weight: 500;
+    line-height: 170%;
+    margin: 30px 0;
+}
+/*Div hero_ Active button*/
+.hero-info .btn{
+    background: rgb(206, 120, 7);
+    color: wheat;
+    font-size: 18px;
+    border-radius: 20px;
+    padding: 15px 30px;
+    border: 0;
+    transition: all 500ms ease;
+}
+.hero-info .btn:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+.hero img{
+    position: absolute;
+    top: -150px;
+    right: 0;
+}
+
+/*Progects*/
+.trending{
+    padding-top: 50px;
+}
+.trending h3{
+    font-weight: 600;
+    font-size: 31px;
+}
+.trending .progects{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 50px 0;
+}
+#big_icons{
+    width: 300px;
+    height: 300px;
+    border-radius: 60px;
+}
+#small_icons{
+    width: 50px;
+    height: 50px;
+    border-radius: 30px;
+    position: relative;
+    top: 5px;
+}
+.trending .progects .span{
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+}
+
+
+
+/*Progects "see-all" button*/
+.trending .see-all{
+    color: white;
+    background: black;
+    border-radius: 5px;
+    padding: 12px 23px;
+    float: right;
+    display: block;
+    transition: all 500ms ease;
+}
+
+.trending .see-all:hover{
+    transform: scale(1.1);
+}
+
+/*Big text (after progekts)*/
+.big-text{
+    padding: 50px 0;
+    font-size: 35px;
+    font-weight: 600;
+    text-align: center;
+    width: 800px;
+}
+
+/*Banner s pashalkoj*/
+.banner{
+    padding: 80px;
+
+}
+.banner h3{
+    font-size: 30px;
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+.banner p{
+    line-height: 170%;
+    margin-bottom: 30px;
+    width: 550px;
+}
+.banner img{
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+

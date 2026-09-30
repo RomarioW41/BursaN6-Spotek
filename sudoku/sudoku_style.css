@@ -1,0 +1,50 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+#sudoku {
+    display: grid;
+    grid-template-columns: repeat(9, 40px);
+    grid-template-rows: repeat(9, 40px);
+
+    width: 360px;
+    margin: 30px auto;
+}
+
+#sudoku input {
+    width: 40px;
+    height: 40px;
+
+    box-sizing: border-box;
+
+    text-align: center;
+    font-size: 20px;
+
+    border: 1px solid black;
+}
+
+/* Linie pomiedzy kwadratami 3×3 */
+
+#sudoku input:nth-child(3n) {
+    border-right: 3px solid black;
+}
+
+#sudoku input:nth-child(n+19):nth-child(-n+27),
+#sudoku input:nth-child(n+46):nth-child(-n+54) {
+    border-bottom: 3px solid black;
+}
+
+#sudoku input:nth-child(n+1):nth-child(-n+9) {
+    border-top: 3px solid black;
+}
+
+#sudoku input:nth-child(n+73):nth-child(-n+81) {
+    border-bottom: 3px solid black;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
